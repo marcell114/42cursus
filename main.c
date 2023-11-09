@@ -1,8 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpal <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/02 19:26:08 by mpal              #+#    #+#             */
+/*   Updated: 2023/11/09 20:39:16 by mpal             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int main() {
-    char *str = "Hello, world!";
-    int length = ft_strlen(str);
-    printf("Length: %d\n", length);
-    return 0;
+void	test(void)
+{
+	return ;
+}
+
+int	main(void)
+{
+	ft_memman_init();
+	test();
+	ft_force_buff();
+	ft_memman_clean();
+	return (0);
 }
