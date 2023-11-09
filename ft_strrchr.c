@@ -1,38 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpal <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/02 17:56:14 by mpal              #+#    #+#             */
+/*   Updated: 2023/11/08 19:13:19 by mpal             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-size_t ft_strlen(const char *str)
+char	*ft_strrchr(const char *str, int c)
 {
-    int i;
+	char	*chr;
+	int		len;
 
-    i = 0;
-    while (str[i] != '\0')
-    {
-        i++;
-    }
-    return (i);
+	len = ft_strlen(str);
+	chr = (char *)str + len;
+	while (chr >= str)
+	{
+		if (*chr == (char)c)
+			return (chr);
+		chr--;
+	}
+	return (NULL);
 }
-char *ft_strrchr(const char *str, int c)
-{
-    char *chr;
-    int len;
-
-     len = ft_strlen(str);
-    chr = (char *)str + len;
-    while (chr >= str && *chr != c)
-    {
-        chr--;
-    }
-    if (*chr == c)
-    {
-        return (chr);
-    }
-    else
-    {
-        return (NULL);
-    }
-    
-}
-int main() {
+/*int main() {
     const char *str = "Hello, world!";
     int c = '!';
 
@@ -44,4 +39,4 @@ int main() {
     }
 
     return 0;
-}
+}*/

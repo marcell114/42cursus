@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpal <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 16:29:06 by mpal              #+#    #+#             */
-/*   Updated: 2023/10/16 16:29:11 by mpal             ###   ########.fr       */
+/*   Created: 2023/11/02 11:20:40 by mpal              #+#    #+#             */
+/*   Updated: 2023/11/08 18:44:47 by mpal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	char *chr;
+	char	*chr;
 
 	chr = (char *)str;
-	while (*chr != c)
+	while (*chr != (char)c)
 	{
-			if (! *chr)
-			{
-					return (NULL);
-			}
-			chr++;
+		if (! *chr)
+		{
+			return (NULL);
+		}
+		chr++;
 	}
 	return (chr);
 }

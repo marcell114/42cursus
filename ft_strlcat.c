@@ -1,14 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpal <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/02 17:45:21 by mpal              #+#    #+#             */
+/*   Updated: 2023/11/02 17:45:59 by mpal             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int i;
-	unsigned int j;
-	unsigned int cpy;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	cpy;
 
 	i = ft_strlen(dest);
 	j = 0;
-	cpy = ft_strlen(src) + (size <= i ? size : i);
+	if (size <= i)
+		cpy = ft_strlen(src) + size;
+	else
+		cpy = ft_strlen(src) + i;
 	if (size == 0)
 		return (cpy);
 	while (src[j] != '\0' && i < (size - 1))

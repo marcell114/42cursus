@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpal <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/02 17:15:50 by mpal              #+#    #+#             */
+/*   Updated: 2023/11/09 18:00:08 by mpal             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
@@ -6,9 +18,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*dests;
 	unsigned char	*srcs;
 
+	if (src == NULL || dest == NULL)
+		return (dest);
 	i = 0;
-	dests = (unsigned char*)dest;
-	srcs = (unsigned char*)src;
+	dests = (unsigned char *)dest;
+	srcs = (unsigned char *)src;
 	if (src < dest)
 	{
 		n--;
@@ -19,10 +33,12 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		}
 	}
 	else
+	{
 		while (i < n)
 		{
 			dests[i] = srcs[i];
 			i++;
 		}
+	}
 	return (dest);
 }
