@@ -6,7 +6,7 @@
 /*   By: mpal <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 17:45:21 by mpal              #+#    #+#             */
-/*   Updated: 2023/11/02 17:45:59 by mpal             ###   ########.fr       */
+/*   Updated: 2023/11/14 14:56:10 by mpal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	cpy;
+	size_t	i;
+	size_t	j;
+	size_t	cpy;
 
 	i = ft_strlen(dest);
 	j = 0;
