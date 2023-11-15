@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpal <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 17:45:21 by mpal              #+#    #+#             */
-/*   Updated: 2023/11/14 14:56:10 by mpal             ###   ########.fr       */
+/*   Created: 2023/11/15 15:42:56 by mpal              #+#    #+#             */
+/*   Updated: 2023/11/15 15:44:45 by mpal             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,23 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
+	size_t	res;
 	size_t	i;
-	size_t	j;
-	size_t	cpy;
 
-	i = ft_strlen(dest);
-	j = 0;
-	if (size <= i)
-		cpy = ft_strlen(src) + size;
-	else
-		cpy = ft_strlen(src) + i;
+	i = size;
+	res = ft_strlen(dest) + ft_strlen(src);
+	while (*dest != 0 && size > 0)
+	{
+		dest++;
+		size--;
+	}
 	if (size == 0)
-		return (cpy);
-	while (src[j] != '\0' && i < (size - 1))
-		dest[i++] = src[j++];
-	dest[i] = '\0';
-	return (cpy);
+		return (ft_strlen(src) + i);
+	while (*src != 0 && size > 1)
+	{
+		*dest++ = *src++;
+		size--;
+	}
+	*dest = '\0';
+	return (res);
 }
